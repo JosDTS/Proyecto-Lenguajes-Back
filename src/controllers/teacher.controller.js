@@ -32,7 +32,7 @@ exports.getTeacherByPassword = async (req, res) => {
     return res.status(400).json({ error: 'ID and password are required' });
   }
   try {
-    const teacher = await prisma.teacher.findFirst({
+    const teacher = await prisma.teacher.findFirst({ 
       where: { 
         id : id,
         password: password
@@ -60,6 +60,7 @@ exports.getAllTeachers = async (req, res) => {
 
 exports.createTeacher = async (req, res) => {
   try {
+    console.log('Creating teacher with data:', req.body);
     const newTeacher = await prisma.teacher.create({ data: req.body });
     res.json(newTeacher);
   } catch (error) {

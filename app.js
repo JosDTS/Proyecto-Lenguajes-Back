@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors');
-//const port = 3000
+const port = 3000
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
@@ -31,7 +31,7 @@ app.use("/api/login", login);
 app.use("/api/teacher", teacher);
 
  
-/*app.listen(port, () => {
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-});*/
+});
 
